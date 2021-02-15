@@ -2,17 +2,17 @@
 
 A simple node script that automatically claims your GoodDollar basic income every day.
 
-## Who can use it?
-
-* A verified GoodDollar wallet.
-* Be comfortable installing node and using the command line on your computer.
-* Convert some of your G$ to Fuse for gas money.
-
 ## Why?
 
 It takes 30 seconds to claim GoodDollars every day. That doesn't sound like much, but it works out to 3 hours a year! For a developer interested in the project, that is time better spent finding ways to contribute to the project.
 
 The code is also designed to show how to script the GoodDollar dDapp. All the work on the blockchain is transparently shown in `cli.js`.
+
+## Who can use it?
+
+* Must have a verified GoodDollar wallet.
+* Must be comfortable installing node and using the command line on your computer.
+* Must be able to convert some of your G$ to Fuse for gas money.
 
 ## Limitations
 
@@ -21,7 +21,9 @@ The code is also designed to show how to script the GoodDollar dDapp. All the wo
 
 ## Running
 
-TBD
+Must have a recent version of nodejs installed (with `npx`).
+
+```npx goodtimes```
 
 ## Support
 
