@@ -12,7 +12,7 @@ A simple node script that automatically claims your GoodDollar basic income ever
 
 It takes 30 seconds to claim GoodDollars every day. That doesn't sound like much, but it works out to 3 hours a year! For a developer interested in the project, that is time better spent finding ways to contribute to the project.
 
-The code is also designed to show how to script the GoodDollar dDapp. All the work on the blockchain is transparently shown in `index.js`.
+The code is also designed to show how to script the GoodDollar dDapp. All the work on the blockchain is transparently shown in `cli.js`.
 
 ## Limitations
 
