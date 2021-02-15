@@ -10,12 +10,11 @@
   "version": "1.0.0",
   "description": "Script to automatically claim GoodDollars.",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "goodtimes": "./cli.js"
+    "goodtimes": "cli.js"
   },
   "repository": {
     "type": "git",
