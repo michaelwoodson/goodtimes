@@ -4,15 +4,21 @@ const fs = require('fs');
 const path = require('path');
 const {encrypt, decrypt} = require('./cipher');
 const os = require('os');
+const { exit } = require('process');
 
 module.exports.getPrivateKey = getPrivateKey;
 
 async function getPrivateKey() {
   const CONFIG_FILE = path.join(os.homedir(), '.GoodStake.config');
   if (fs.existsSync(CONFIG_FILE)) {
-    const encryptedPrivateKey = fs.readFileSync(CONFIG_FILE);
-    const password = await secretPrompt('Enter password');
-    return decrypt(encryptedPrivateKey, password.padEnd(32)).toString();
+    try {
+      const encryptedPrivateKey = fs.readFileSync(CONFIG_FILE);
+      const password = await secretPrompt('Enter password');
+      return decrypt(encryptedPrivateKey, password.padEnd(32)).toString();
+    } catch (e) {
+      console.log(`Wrong password. Try again or delete ${CONFIG_FILE} to reset.`);
+      exit(1);
+    }
   } else {
     const privateKey = await secretPrompt('Enter account private key');
     const password = await secretPrompt('Enter a password');
