@@ -8,7 +8,7 @@ It takes 30 seconds to claim GoodDollars every day. That doesn't sound like much
 
 The code is also designed to show how to script the GoodDollar dDapp. All the work on the blockchain is transparently shown in `cli.js`.
 
-Converting G$ to gas is a great way to learn more about how G$ works.
+Converting G$ to fuse for gas is a great way to learn more about how G$ works.
 
 ## Who can use it?
 
@@ -30,9 +30,9 @@ Must have a recent version of nodejs installed (with `npx`).
 ## How to buy gas
 
 1. Add the Fuse network to MetaMask. ([Directions here](https://docs.fuse.io/the-fuse-studio/getting-started/how-to-add-fuse-to-your-metamask))
-2. Add the G$ Custom Token, the contract address for G$ is: `0x495d133B938596C9984d462F007B676bDc57eCEC`.
+2. Add the G$ Custom Token, the contract address for G$ is: `0x495d133B938596C9984d462F007B676bDc57eCEC` on the Fuse network.
 3. "Export Wallet" from the GoodDollar Wallet and "Import Account" to MetaMask.
-4. Go to [fuseswap](https://fuseswap.com) and trade some G$ for FUSE. (Around 10$ should last a few months, exchange rates and gas prices vary.)
+4. Go to [fuseswap](https://fuseswap.com) and trade some G$ for FUSE. (Around 10 G$ should last a few months, exchange rates and gas prices vary.)
 
 ## Support
 
