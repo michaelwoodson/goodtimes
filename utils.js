@@ -5,11 +5,12 @@ const path = require('path');
 const {encrypt, decrypt} = require('./cipher');
 const os = require('os');
 const { exit } = require('process');
+const Web3 = require('web3');
 
 module.exports.getPrivateKey = getPrivateKey;
 
 async function getPrivateKey() {
-  const CONFIG_FILE = path.join(os.homedir(), '.GoodStake.config');
+  const CONFIG_FILE = path.join(os.homedir(), '.GoodTimes.config');
   if (fs.existsSync(CONFIG_FILE)) {
     try {
       const encryptedPrivateKey = fs.readFileSync(CONFIG_FILE);
@@ -20,7 +21,15 @@ async function getPrivateKey() {
       exit(1);
     }
   } else {
-    const privateKey = await secretPrompt('Enter account private key');
+    console.log('Find your private key in the "Export Wallet" section of the GoodDollar wallet.');
+    const privateKey = await secretPrompt('Enter private key');
+    try {
+      const web3 = new Web3(new Web3.providers.HttpProvider('https://rpc.fuse.io/'));
+      web3.eth.accounts.privateKeyToAccount(privateKey);
+    } catch (e) {
+      console.log('Oops, that\'s not a private key!');
+      exit(1);
+    }
     const password = await secretPrompt('Enter a password');
     const encrypted = encrypt(privateKey, password.padEnd(32));
     fs.writeFileSync(CONFIG_FILE, encrypted, {flag: 'a+'});
