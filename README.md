@@ -8,24 +8,28 @@ It takes 30 seconds to claim GoodDollars every day. That doesn't sound like much
 
 The code is also designed to show how to script the GoodDollar dDapp. All the work on the blockchain is transparently shown in `cli.js`.
 
-Converting G$ to fuse for gas is a great way to learn more about how G$ works.
+Also, converting G$ to fuse for gas is a great way to learn more about how G$ works.
 
 ## Who can use it?
 
 * Must have a verified GoodDollar wallet.
 * Must be comfortable installing node and using the command line on your computer.
 * Must be able to convert some of your G$ to fuse for gas money.
+* Should have access to a server that is always running, otherwise you will waste energy and lose money running this.
 
 ## Limitations
 
 * No notification when you need to reverify your ID.
 * Converting G$ to fuse for gas money reduces daily income.
+* Doesn't check for enough gas before sending transaction.
 
 ## Running
 
 Must have a recent version of nodejs installed (with `npx`).
 
-```npx goodtimes```
+```npx goodtimes@1.0.4```
+
+I would recommend reviewing the code on `npmjs.com` before running since the program needs access to your private key. (That means theoretically it could send your G$ and anything in your account anywhere.) Including the version number in the invocation will protect you from running a different version than the one you review.
 
 ## How to buy gas
 
