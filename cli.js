@@ -30,7 +30,13 @@ const UBI_CONTRACT_ADDRESS = '0xD7aC544F8A570C4d8764c3AAbCF6870CBD960D0D';
   console.log('');
   console.log(`Will automatically claim G$ every day if this script is left running, starting ${startMoment.format('lll')}.`);
   console.log('WARNING: this will only work if this computer is kept awake e.g. used for mining or a server.')
-  cron.schedule(`${randomSecond} ${randomMinute} ${startMoment.hour()} * * *`, () => claim(web3, mainAccount, ubiContract));
+  console.log(`${moment().format('lll')}: Going to sleep!`);
+  cron.schedule(`${randomSecond} ${randomMinute} ${startMoment.hour()} * * *`, () => {
+    console.log('');
+    console.log(`${moment().format('lll')}: Woke up, time to make a claim!`);
+    claim(web3, mainAccount, ubiContract);
+    console.log('All done, time to go to sleep.');
+  });
 })();
 
 async function claim(web3, mainAccount, ubiContract) {
@@ -45,6 +51,7 @@ async function claim(web3, mainAccount, ubiContract) {
       console.error('Claim failed, try using the website wallet.', e);
     }
   } else {
+    console.log('No claim available right now.');
     await printNextClaimDate(web3, mainAccount, ubiContract);
   }
 }
