@@ -21,6 +21,7 @@ const UBI_CONTRACT_ADDRESS = '0xD7aC544F8A570C4d8764c3AAbCF6870CBD960D0D';
   const randomSecond = Math.floor(Math.random() * 60);
   startMoment.add(randomMinute, 'minutes');
   startMoment.add(randomSecond, 'seconds');
+  startMoment.add(1, 'hours'); // Workaround daylight savings time bug.
   console.log('');
   console.log(`Claim offset set to: ${randomMinute}:${String(randomSecond).padStart(2, '0')}`);
   console.log('Offset is to avoid higher transaction fees/instability if everyone claims at once.')
@@ -35,7 +36,6 @@ const UBI_CONTRACT_ADDRESS = '0xD7aC544F8A570C4d8764c3AAbCF6870CBD960D0D';
     console.log('');
     console.log(`${moment().format('lll')}: Woke up, time to make a claim!`);
     claim(web3, mainAccount, ubiContract);
-    console.log('All done, time to go to sleep.');
   });
 })();
 
