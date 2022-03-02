@@ -27,7 +27,7 @@ Also, converting G$ to fuse for gas is a great way to learn more about how G$ wo
 
 Must have a recent version of nodejs installed (with `npx`).
 
-```npx goodtimes@1.0.6```
+```npx goodtimes@1.0.7```
 
 I would recommend reviewing the code on `npmjs.com` before running since the program needs access to your private key. (That means theoretically it could send your G$ and anything in your account anywhere.) Including the version number in the invocation will protect you from running a different version than the one you review.
 

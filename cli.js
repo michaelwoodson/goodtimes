@@ -8,7 +8,7 @@ const ERC20ABI = require('./ERC20ABI.json');
 const {getPrivateKey} = require('./utils');
 const cron = require('node-cron');
 
-const UBI_CONTRACT_ADDRESS = '0x87d77A30a6819860eB8332D293810ed7b510035A';
+const UBI_CONTRACT_ADDRESS = '0xd253A5203817225e9768C05E5996d642fb96bA86';
 
 (async () => {
   const web3 = new Web3(new Web3.providers.HttpProvider('https://rpc.fuse.io/'));
